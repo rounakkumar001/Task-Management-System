@@ -1,0 +1,33 @@
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.iconBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.legend {
+    text-align: center;
+    font-weight: bold; 
+}
+.item{
+    width: 300px;
+    height: 100px;
+
+    display: flex;
+}
+
+.username{
+    text-align: start;
+    font-weight:  bold;
+    font-size: 1.1rem;
+}
+.message {
+    text-align: start;
+    font-weight: 300;
+    font-size: .9rem;
+    margin-top: 8px;
+}

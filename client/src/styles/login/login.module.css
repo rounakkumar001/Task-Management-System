@@ -1,0 +1,121 @@
+.container{
+    /* background-color: rebeccapurple; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subContaier{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+.left{
+    background-color: var(--quaternary);
+    padding: 2rem;
+    /* border-radius: 30px; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+.heading{
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px 0px 5px 0px;
+}
+.subtitle{
+    font-weight: 300;
+
+
+}
+.contentBox{
+    margin-top: 1rem;
+}
+
+/* right  */
+
+.right{
+    background-color: var(--white);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 2rem;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.inputBox{
+    margin-top: .8rem;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold; 
+    padding: 20px;  
+}
+.inputField{
+    display: flex;
+    position: relative;
+    margin-top: 8px;
+
+}
+
+.inputLabel{
+    font-weight: bold;
+}
+
+.inputEle{
+ 
+    background-color: var(--ternary);
+    border: none;
+    padding: 10px 40px;
+    /* padding-left: 40px; */
+    width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--primary);
+
+
+}
+
+.inputEle::placeholder {
+    color: var(--quaternary);
+}
+
+.inputFieldIconBox{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: var(--white);
+}
+
+.inputFieldIconBox2{
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.buttonBox{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.otherOption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+}
+

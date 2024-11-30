@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: var(--primary);
+    z-index: 1000;
+    padding: 20px;
+    transition: border-bottom 0.3s ease; /* Smooth transition for the border */
+}
+
+.navbar.scrolled {
+    border-bottom: 2px solid var(--ternary); /* Change color and width as needed */
+    border-radius: 5px;
+}
+.logoSection{
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+    width: 20%;
+}
+
+.logoName{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.navlinks{
+    display: flex;
+    /* background-color: red; */
+    width: 40%;
+    justify-content: space-evenly;
+}
+.link{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+
+@media screen and (max-width : 768px) {
+    .navlinks{
+        display: none;
+    }
+    .logoSection{
+        min-width: 100%;
+    }
+}

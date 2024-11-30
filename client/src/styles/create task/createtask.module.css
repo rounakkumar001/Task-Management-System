@@ -1,0 +1,110 @@
+
+
+
+
+.container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* background-color: pink; */
+    
+}
+.subcontainer{
+    /* background: #000; */
+    min-width: 700px;
+    max-width: 700px;
+    height: 80vh;
+
+    
+}
+.heading{
+    width: 180px;
+}
+.companyTitle{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    justify-content: start;
+
+}
+.sectionTitle{
+    text-align: end;
+    text-transform: uppercase;
+    font-weight:  bold;
+    font-size: 1.1rem;
+    text-align: start;
+}
+
+.formContainer{
+    background-color: var(--blue);
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.label{
+    font-weight:  bold;
+    color: var(--white);
+    font-size: 1.1rem;
+  
+}
+
+.input{
+    padding: 20px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: black;
+    border: none;
+    height : 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.input::placeholder {
+    /* color: var(--ternary); */
+}
+
+/* styles.module.css */
+.select {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    background-color: #fff; 
+    color: black; 
+    transition: border-color 0.3s ease; 
+    width: 50%;
+    margin-top: 10px;
+    font-weight: bold;
+    
+    cursor: pointer; 
+}
+
+/* .select:hover {
+    border-color: #007bff;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /
+} */
+
+.btnGroup{
+    display:  flex;
+    justify-content: end;
+}
+
+
+
+.iconbtn{
+    color: var(--white);
+    background-color: var(--secondary);
+    margin-right: 10px;
+}
+
+.addBtn{
+    border-radius: 20px;
+
+}

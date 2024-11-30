@@ -1,0 +1,35 @@
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--white);
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 10px 10px;
+    border-radius: 50px;
+    border: 2px solid var(--ternary);
+}
+
+.activeCircle {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-color: var(--primary);
+    z-index: -1;
+    border-radius: 50%;
+    border: 5px solid var(--ternary);
+    top: -12px;
+    left: 36px;
+  
+  
+  }
+
+  .navIcon {
+    font-size: 1.rem;
+ 
+    transition: 0.3s ease;
+  
+    color: var(--white);
+  }

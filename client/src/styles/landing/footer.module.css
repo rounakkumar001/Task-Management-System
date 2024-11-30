@@ -1,0 +1,103 @@
+.container{
+    margin-top: 3rem;
+    background:var(--blue);
+    padding: 2rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.copyrightLine{
+    font-size: .9rem;
+    color: var(--ternary);
+    text-align: center;
+    margin-top: 1rem;
+
+}
+.contactTitle{
+    font-weight:  bold;
+    font-size: 1.2rem;   
+}
+.contactItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+    ;
+    margin-top: 1rem;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+    font-size: .9rem;
+    margin-top: .3rem;
+}
+
+.item .icon{
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+.socialIcons{
+    margin-top: 1rem;
+}
+
+.socialIcons .socialIcon{
+    font-size: 2rem;
+    margin-right: 10px;
+}
+.subtitle{
+    font-size: .9rem;
+    font-weight: 100;
+    margin-top: .5rem;
+}
+
+.inputBox{
+    display: flex;
+
+    position: relative;
+    align-items: center;
+    margin-top: 1rem;
+}
+.inputIcon{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+.inputTextBox{
+    width: 100%;
+}
+
+.input{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 10px;
+    background-color: var(--quaternary);
+    padding-left: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    /* outline: none; */
+    border: none;
+    
+}
+.input::placeholder{
+    color: var(--ternary);
+}
+
+.subscribeBox{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: .5rem;
+}
+
+@media screen and (max-width : 768px) {
+    .grid{
+        grid-template-columns: 1fr;
+    }
+}
