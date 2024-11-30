@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/create task/createtask.module.css';
 import { AssignmentTurnedIn, AddCircleRounded, SyncRounded } from '@mui/icons-material';
-import { Button, IconButton } from '@mui/material';
+import { Button, CircularProgress, IconButton } from '@mui/material';
 import api from '../../axios/axios.js';
 import { useLocation } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 const CreateTask = () => {
-    const location = useLocation(); 
-    const task = location.state?.task; 
+    const location = useLocation();
+    const task = location.state?.task;
+    const {loading} = useSelector((store) => store.tasks);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState('');
-    const [priority, setPriority] = useState('medium'); 
+    const [priority, setPriority] = useState('medium');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+
 
 
     useEffect(() => {
         if (task) {
             setTitle(task.title);
             setDescription(task.description || '');
-            setDueDate(task.dueDate.split('T')[0]); 
+            setDueDate(task.dueDate.split('T')[0]);
             setPriority(task.priority);
         }
     }, [task]);
@@ -29,10 +31,10 @@ const CreateTask = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrorMessage(''); 
+        setErrorMessage('');
         setSuccessMessage('');
 
-   
+
         if (!title.trim()) {
             setErrorMessage('Task title is required.');
             return;
@@ -49,18 +51,18 @@ const CreateTask = () => {
             let response;
 
             if (task) {
-           
+
                 response = await api.post('/tasks/createTask', {
                     title,
                     description,
                     dueDate,
                     priority,
-                    taskId: task._id 
+                    taskId: task._id
                 }, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
             } else {
-                
+
                 response = await api.post('/tasks/createTask', {
                     title,
                     description,
@@ -71,15 +73,15 @@ const CreateTask = () => {
                 });
             }
 
-            
+
             setSuccessMessage(response.data.message);
-           
+
             setTitle('');
             setDescription('');
             setDueDate('');
             setPriority('medium');
         } catch (error) {
-           
+
             if (error.response) {
                 setErrorMessage(error.response.data.error_message || 'An error occurred while processing your request.');
             } else {
@@ -168,18 +170,31 @@ const CreateTask = () => {
                     </div>
 
                     <div className={`${styles.btnGroup}`}>
-                       
 
-                        <IconButton sx={{ color: 'var(--white)' }}>
-                            <SyncRounded />
-                        </IconButton>
+                        {
+                            loading ?
+                                <Button variant='contained' endIcon={<AddCircleRounded />}
+                                    sx={{ borderRadius: '20px' }}
+                                    type="submit"
+                                >
 
-                        <Button variant='contained' endIcon={<AddCircleRounded />}
-                            sx={{ borderRadius: '20px' }}
-                            type="submit" 
-                        >
-                            {task ? 'Update Task' : 'Add Task'}
-                        </Button>
+                                    {task ? 'Updating Task...' : 'Adding Task...'}
+
+                                </Button>
+
+                                :
+
+                                <Button variant='contained' endIcon={<AddCircleRounded />}
+                                    sx={{ borderRadius: '20px' }}
+                                    type="submit"
+                                >
+
+                                    {task ? 'Update Task' : 'Add Task'}
+
+                                </Button>
+                        }
+
+
                     </div>
                 </form>
             </div>
